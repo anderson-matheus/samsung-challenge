@@ -17,6 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateUserActivity" />
+        <activity
+            android:name=".HomeNavigationActivity"
+            android:label="@string/title_activity_home_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CardActivity"></activity>
     </application>
 
 </manifest>

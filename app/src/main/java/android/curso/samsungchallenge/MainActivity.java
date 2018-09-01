@@ -28,5 +28,14 @@ public class MainActivity extends Activity {
             }
         });
 
+        btnLogin = findViewById(R.id.buttonLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeNavigationActivity = new Intent(MainActivity.this, HomeNavigationActivity.class);
+                MainActivity.this.startActivity(homeNavigationActivity);
+            }
+        });
+
     }
 }
