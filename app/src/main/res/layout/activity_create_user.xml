@@ -5,15 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CreateUserActivity">
+    tools:context=".view.CreateUserActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
-        android:layout_marginBottom="20dp"
-        android:background="#CCCCCC"
-        android:padding="20dp" />
+        android:layout_marginBottom="10dp"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="FAÇA SEU CADASTRO"
+        android:textSize="20sp"
+        android:background="@color/colorAqua"
+        android:textColor="@color/colorWhite"
+        android:padding="5dp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -27,7 +38,9 @@
         android:hint="E-mail"
         android:inputType="none"
         android:paddingTop="30dp"
-        android:paddingBottom="30dp" />
+        android:paddingBottom="30dp"
+        android:drawableLeft="@drawable/ic_email_black_24dp"
+        android:drawablePadding="10dp" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -41,7 +54,9 @@
         android:paddingTop="30dp"
         android:paddingBottom="30dp"
         android:inputType="textPassword"
-        android:hint="Senha" />
+        android:hint="Senha"
+        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+        android:drawablePadding="10dp"/>
 
     <EditText
         android:id="@+id/editTextConfirmPassword"
@@ -55,7 +70,9 @@
         android:paddingTop="30dp"
         android:paddingBottom="30dp"
         android:inputType="textPassword"
-        android:hint="Confirmar senha" />
+        android:hint="Confirmar senha"
+        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+        android:drawablePadding="10dp" />
 
     <Button
         android:id="@+id/buttonCreate"
@@ -69,6 +86,7 @@
         android:paddingBottom="20dp"
         android:text="Cadastrar"
         android:textAlignment="center"
-        android:background="#27ae60"
-        android:textColor="#FFFFFF" />
+        android:background="@color/colorBlush"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"/>
 </LinearLayout>
