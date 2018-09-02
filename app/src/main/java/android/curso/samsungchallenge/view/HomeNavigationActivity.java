@@ -98,7 +98,7 @@ public class HomeNavigationActivity extends AppCompatActivity
                 fragmentManager.beginTransaction().replace(R.id.content_fragment, new CardFragment()).commit();
                 break;
             case R.id.nav_monitoring:
-                setTitle("Monitoramento de apps");
+                setTitle("Monitoramento");
                 fragmentManager.beginTransaction().replace(R.id.content_fragment, new MonitoringFragment()).commit();
                 break;
             case R.id.nav_timer:
