@@ -2,10 +2,16 @@ package android.curso.samsungchallenge.view;
 
 import android.curso.samsungchallenge.R;
 import android.curso.samsungchallenge.fragment.BaseFragment;
+import android.curso.samsungchallenge.fragment.CardFragment;
+import android.curso.samsungchallenge.fragment.ChatFragment;
+import android.curso.samsungchallenge.fragment.MonitoringFragment;
+import android.curso.samsungchallenge.fragment.TimerFragment;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -76,10 +82,46 @@ public class HomeNavigationActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            finish();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void displaySelectedScreen(int id) {
+        Fragment fragment = null;
+
+        switch (id) {
+            case R.id.nav_card:
+                setTitle("Cards");
+                fragmentManager.beginTransaction().replace(R.id.content_fragment, new CardFragment()).commit();
+                break;
+            case R.id.nav_monitoring:
+                setTitle("Monitoramento de apps");
+                fragmentManager.beginTransaction().replace(R.id.content_fragment, new MonitoringFragment()).commit();
+                break;
+            case R.id.nav_timer:
+                setTitle("Timer");
+                fragmentManager.beginTransaction().replace(R.id.content_fragment, new TimerFragment()).commit();
+                break;
+            case R.id.nav_chat:
+                setTitle("Chat");
+                fragmentManager.beginTransaction().replace(R.id.content_fragment, new ChatFragment()).commit();
+                break;
+            default:
+                fragmentManager.beginTransaction().replace(R.id.content_fragment, new CardFragment()).commit();
+                break;
+        }
+
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.drawer_layout, fragment);
+            ft.commit();
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -88,8 +130,7 @@ public class HomeNavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        displaySelectedScreen(id);
         return true;
     }
 }

@@ -21,7 +21,6 @@
             android:name=".view.HomeNavigationActivity"
             android:label="@string/title_activity_home_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".view.CardActivity" />
         <activity
             android:name=".view.MainActivity"
             android:label="@string/app_name"
