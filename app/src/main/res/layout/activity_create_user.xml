@@ -75,7 +75,7 @@
         android:drawablePadding="10dp" />
 
     <Button
-        android:id="@+id/buttonCreate"
+        android:id="@+id/buttonNewUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"

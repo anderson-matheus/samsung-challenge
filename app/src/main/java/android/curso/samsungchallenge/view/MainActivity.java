@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -31,6 +32,7 @@ public class MainActivity extends Activity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getBaseContext(), "Bem-vindo nome do usuário" , Toast.LENGTH_SHORT ).show();
                 Intent homeNavigationActivity = new Intent(MainActivity.this, HomeNavigationActivity.class);
                 MainActivity.this.startActivity(homeNavigationActivity);
             }
