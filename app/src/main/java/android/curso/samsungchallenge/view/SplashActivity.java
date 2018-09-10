@@ -2,11 +2,11 @@ package android.curso.samsungchallenge.view;
 
 import android.content.Intent;
 import android.curso.samsungchallenge.R;
+import android.curso.samsungchallenge.datasource.DataSource;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Window;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -27,8 +27,10 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                DataSource ds = new DataSource(getBaseContext());
                 Intent loginView = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(loginView);
+                finish();
             }
         }, SPLASH_TIME_OUT);
     }
