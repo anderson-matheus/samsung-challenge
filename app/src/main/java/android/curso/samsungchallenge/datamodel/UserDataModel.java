@@ -29,7 +29,7 @@ public class UserDataModel {
     }
 
     public static String getQueryCreateTable() {
-        queryCreateTable = "CREATE TABLE " + table + " ";
+        queryCreateTable = "CREATE TABLE IF NOT EXISTS " + table + " ";
         queryCreateTable += "(";
         queryCreateTable += id + " INTEGER PRIMARY KEY, ";
         queryCreateTable += name + " TEXT, ";
