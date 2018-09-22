@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.NewCardFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_timer"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="CADASTRE SUA TAREFA"
+        android:textSize="20sp"
+        android:background="@color/colorAqua"
+        android:textColor="@color/colorWhite"
+        android:padding="5dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/editTextNameCard"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_vertical"
+        android:hint="Nome"
+        android:inputType="none"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:drawableLeft="@drawable/ic_menu_timer"
+        android:drawablePadding="10dp" />
+
+    <Button
+        android:id="@+id/buttonNewUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="Cadastrar"
+        android:textAlignment="center"
+        android:background="@color/colorBlush"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"/>
+
+</LinearLayout>
