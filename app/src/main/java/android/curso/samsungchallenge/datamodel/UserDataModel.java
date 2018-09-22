@@ -31,7 +31,7 @@ public class UserDataModel {
     public static String getQueryCreateTable() {
         queryCreateTable = "CREATE TABLE IF NOT EXISTS " + table + " ";
         queryCreateTable += "(";
-        queryCreateTable += id + " INTEGER PRIMARY KEY, ";
+        queryCreateTable += id + " INTEGER PRIMARY KEY AUTOINCREMENT, ";
         queryCreateTable += name + " TEXT, ";
         queryCreateTable += email + " TEXT UNIQUE, ";
         queryCreateTable += password + " TEXT ";
