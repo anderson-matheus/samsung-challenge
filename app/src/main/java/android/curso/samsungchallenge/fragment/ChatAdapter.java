@@ -32,16 +32,18 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         // view type is to identify where to render the chat message
         // left or right
+        System.out.println(viewType);
         if (viewType == SELF) {
             // self message
+            System.out.println("IFFFFFFFFFFFFFFF");
             itemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.chat_item_self, parent, false);
         } else {
             // ZomGenius message
+            System.out.println("ELSEEEEEEEEEEEE");
             itemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.chat_item_watson, parent, false);
         }
-
 
         return new ViewHolder(itemView);
     }
