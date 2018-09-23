@@ -26,6 +26,6 @@
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_gravity="left"
-            android:src="@drawable/logo"/>
+            android:src="@drawable/icon_user"/>
     </LinearLayout>
 </LinearLayout>
