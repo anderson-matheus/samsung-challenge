@@ -1,6 +1,8 @@
 package android.curso.samsungchallenge.datasource;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.curso.samsungchallenge.datamodel.TaskDataModel;
 import android.curso.samsungchallenge.datamodel.UserDataModel;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -17,6 +19,7 @@ public class DataSource extends SQLiteOpenHelper {
         db = getWritableDatabase();
         try {
             db.execSQL(UserDataModel.getQueryCreateTable());
+            db.execSQL(TaskDataModel.getQueryCreateTable());
         } catch (Exception e) {
             Log.e("User table", "DB----> ERRO:" + e.getMessage());
         }
@@ -34,5 +37,15 @@ public class DataSource extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    public boolean insert(String table, ContentValues data) {
+        boolean success = true;
+        try {
+            success = db.insert(table, null, data) > 0;
+        } catch(Exception e) {
+            success = false;
+        }
+        return success;
     }
 }
