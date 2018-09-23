@@ -27,7 +27,7 @@
         android:textStyle="bold"/>
 
     <EditText
-        android:id="@+id/editTextNameCard"
+        android:id="@+id/editTextCardName"
         android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         android:drawablePadding="10dp" />
 
     <EditText
-        android:id="@+id/editTextContentCard"
+        android:id="@+id/editTextCardContent"
         android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         android:drawablePadding="10dp" />
 
     <Button
-        android:id="@+id/buttonNewUser"
+        android:id="@+id/buttonNewCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"

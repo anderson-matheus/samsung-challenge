@@ -29,8 +29,8 @@ public class NewTaskFragment extends Fragment {
     }
 
     private boolean validateNameTask(){
-        String nameTask = editTextNameTask.getText().toString().trim();
-        if (nameTask.isEmpty()) {
+        String taskName = editTextNameTask.getText().toString().trim();
+        if (taskName.isEmpty()) {
             editTextNameTask.setError("Informe um nome para a tarefa");
             return false;
         }
