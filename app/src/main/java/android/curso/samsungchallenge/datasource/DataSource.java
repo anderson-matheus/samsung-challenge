@@ -4,14 +4,20 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.curso.samsungchallenge.datamodel.TaskDataModel;
 import android.curso.samsungchallenge.datamodel.UserDataModel;
+import android.curso.samsungchallenge.model.Task;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataSource extends SQLiteOpenHelper {
     private static final String DB_NAME = "samsung_challenge.sqlite";
     private static final int DB_VERSION = 1;
 
+    Cursor cursor;
     SQLiteDatabase db;
 
     public DataSource(Context context) {
@@ -47,5 +53,41 @@ public class DataSource extends SQLiteOpenHelper {
             success = false;
         }
         return success;
+    }
+
+    public List<Task> getAllTaksList() {
+        Task obj;
+        List<Task> list = new ArrayList<>();
+        String sql = "SELECT * FROM " + TaskDataModel.getTable() + " ORDER BY CREATED_AT DESC";
+        cursor = db.rawQuery(sql, null);
+        if (cursor.moveToFirst()) {
+            do {
+                obj = new Task();
+                obj.setId(cursor.getInt(cursor.getColumnIndex(TaskDataModel.getId())));
+                obj.setName(cursor.getString(cursor.getColumnIndex(TaskDataModel.getName())));
+                obj.setUserId(cursor.getInt(cursor.getColumnIndex(TaskDataModel.getUserId())));
+                list.add(obj);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return list;
+    }
+
+    public ArrayList<Task> getAllTaks() {
+        Task obj;
+        ArrayList<Task> list = new ArrayList<>();
+        String sql = "SELECT * FROM " + TaskDataModel.getTable() + " ORDER BY CREATED_AT DESC";
+        cursor = db.rawQuery(sql, null);
+        if (cursor.moveToFirst()) {
+            do {
+                obj = new Task();
+                obj.setId(cursor.getInt(cursor.getColumnIndex(TaskDataModel.getId())));
+                obj.setName(cursor.getString(cursor.getColumnIndex(TaskDataModel.getName())));
+                obj.setUserId(cursor.getInt(cursor.getColumnIndex(TaskDataModel.getUserId())));
+                list.add(obj);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return list;
     }
 }

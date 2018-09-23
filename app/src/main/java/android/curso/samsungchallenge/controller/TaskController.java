@@ -6,11 +6,22 @@ import android.curso.samsungchallenge.datamodel.TaskDataModel;
 import android.curso.samsungchallenge.datasource.DataSource;
 import android.curso.samsungchallenge.model.Task;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TaskController extends DataSource {
     ContentValues data;
 
     public TaskController(Context context) {
         super(context);
+    }
+
+    public List<Task> index() {
+        return getAllTaksList();
+    }
+
+    public ArrayList<Task> all() {
+        return getAllTaks();
     }
 
     public boolean store(Task obj) {
