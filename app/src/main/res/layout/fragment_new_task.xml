@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon_card"
+        android:src="@drawable/icon_timer"
         android:layout_marginBottom="10dp"
         android:padding="10dp" />
 
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="CADASTRE SEU CARD"
+        android:text="CADASTRE SUA TAREFA"
         android:textSize="20sp"
         android:background="@color/colorAqua"
         android:textColor="@color/colorWhite"
@@ -27,7 +27,7 @@
         android:textStyle="bold"/>
 
     <EditText
-        android:id="@+id/editTextNameCard"
+        android:id="@+id/editTextNameTask"
         android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,27 +39,11 @@
         android:inputType="none"
         android:paddingTop="30dp"
         android:paddingBottom="30dp"
-        android:drawableLeft="@drawable/ic_card"
-        android:drawablePadding="10dp" />
-
-    <EditText
-        android:id="@+id/editTextContentCard"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:lines="4"
-        android:inputType="textMultiLine"
-        android:hint="Conteúdo"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
-        android:drawableLeft="@drawable/ic_content_card"
+        android:drawableLeft="@drawable/ic_menu_timer"
         android:drawablePadding="10dp" />
 
     <Button
-        android:id="@+id/buttonNewUser"
+        android:id="@+id/buttonNewTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
