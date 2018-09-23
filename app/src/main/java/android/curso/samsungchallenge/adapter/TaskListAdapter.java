@@ -2,13 +2,15 @@ package android.curso.samsungchallenge.adapter;
 
 import android.content.Context;
 import android.curso.samsungchallenge.R;
+import android.curso.samsungchallenge.fragment.TimerFragment;
 import android.curso.samsungchallenge.model.Task;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class TaskListAdapter extends ArrayAdapter<Task> implements View.OnClickL
 
     private static class ViewHolder {
         TextView textViewTaskName;
+        Button buttonStartTimer;
     }
 
     public TaskListAdapter(ArrayList<Task> dataSet, Context context) {
@@ -35,9 +38,11 @@ public class TaskListAdapter extends ArrayAdapter<Task> implements View.OnClickL
         Task task = (Task) object;
 
         switch (view.getId()) {
-            case R.id.textViewtaskName:
-                Snackbar.make(view, "Snackbar " + task.getName(), Snackbar.LENGTH_LONG)
-                        .setAction("No Action", null).show();
+            case R.id.buttonStartTimer:
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                TimerFragment timerFragment = new TimerFragment();
+                activity.getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_fragment, timerFragment, timerFragment.getTag()).commit();
                 break;
         }
     }
@@ -49,17 +54,18 @@ public class TaskListAdapter extends ArrayAdapter<Task> implements View.OnClickL
         ViewHolder line;
         if (dataSet == null) {
             line = new ViewHolder();
-            LayoutInflater listViewTaks = LayoutInflater.from(getContext());
-            dataSet = listViewTaks.inflate(R.layout.listview_taks, parent, false);
+            LayoutInflater listViewTasks = LayoutInflater.from(getContext());
+            dataSet = listViewTasks.inflate(R.layout.listview_taks, parent, false);
             line.textViewTaskName = dataSet.findViewById(R.id.textViewtaskName);
+            line.buttonStartTimer = dataSet.findViewById(R.id.buttonStartTimer);
             dataSet.setTag(line);
         } else {
             line = (ViewHolder) dataSet.getTag();
         }
 
         line.textViewTaskName.setText(task.getName());
-        line.textViewTaskName.setOnClickListener(this);
-        line.textViewTaskName.setTag(position);
+        line.buttonStartTimer.setOnClickListener(this);
+        line.buttonStartTimer.setTag(position);
         return dataSet;
     }
 }

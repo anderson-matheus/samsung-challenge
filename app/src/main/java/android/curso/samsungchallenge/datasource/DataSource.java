@@ -5,6 +5,7 @@ import android.content.Context;
 import android.curso.samsungchallenge.datamodel.CardDataModel;
 import android.curso.samsungchallenge.datamodel.TaskDataModel;
 import android.curso.samsungchallenge.datamodel.UserDataModel;
+import android.curso.samsungchallenge.model.Card;
 import android.curso.samsungchallenge.model.Task;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -59,7 +60,7 @@ public class DataSource extends SQLiteOpenHelper {
     public ArrayList<Task> getAllTaks() {
         Task obj;
         ArrayList<Task> list = new ArrayList<>();
-        String sql = "SELECT * FROM " + TaskDataModel.getTable() + " ORDER BY CREATED_AT DESC";
+        String sql = "SELECT * FROM " + TaskDataModel.getTable() + " ORDER BY created_at DESC";
         cursor = db.rawQuery(sql, null);
         if (cursor.moveToFirst()) {
             do {
@@ -67,6 +68,26 @@ public class DataSource extends SQLiteOpenHelper {
                 obj.setId(cursor.getInt(cursor.getColumnIndex(TaskDataModel.getId())));
                 obj.setName(cursor.getString(cursor.getColumnIndex(TaskDataModel.getName())));
                 obj.setUserId(cursor.getInt(cursor.getColumnIndex(TaskDataModel.getUserId())));
+                list.add(obj);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return list;
+    }
+
+    public ArrayList<Card> getAllCards() {
+        Card obj;
+        ArrayList<Card> list = new ArrayList<>();
+        String sql = "SELECT * FROM " + CardDataModel.getTable() + " ORDER BY created_at DESC";
+        cursor = db.rawQuery(sql, null);
+        if (cursor.moveToFirst()) {
+            do {
+                obj = new Card();
+                obj.setId(cursor.getInt(cursor.getColumnIndex(CardDataModel.getId())));
+                obj.setName(cursor.getString(cursor.getColumnIndex(CardDataModel.getName())));
+                obj.setContent(cursor.getString(cursor.getColumnIndex(CardDataModel.getContent())));
+                obj.setUserId(cursor.getInt(cursor.getColumnIndex(CardDataModel.getContent())));
+                obj.setCreatedAt(cursor.getString(cursor.getColumnIndex(CardDataModel.getCreatedAt())));
                 list.add(obj);
             } while (cursor.moveToNext());
         }

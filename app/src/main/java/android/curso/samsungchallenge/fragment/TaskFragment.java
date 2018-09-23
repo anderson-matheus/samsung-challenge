@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +40,6 @@ public class TaskFragment extends Fragment {
         taskController = new TaskController(getContext());
         listView = view.findViewById(R.id.listTasks);
         data = taskController.all();
-        Log.e("asdasdasd", "asdasdasd");
         TaskListAdapter adapter = new TaskListAdapter(data, getContext());
         listView.setAdapter(adapter);
 

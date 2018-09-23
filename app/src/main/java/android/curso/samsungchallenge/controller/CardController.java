@@ -6,11 +6,17 @@ import android.curso.samsungchallenge.datamodel.CardDataModel;
 import android.curso.samsungchallenge.datasource.DataSource;
 import android.curso.samsungchallenge.model.Card;
 
+import java.util.ArrayList;
+
 public class CardController extends DataSource{
     ContentValues data;
 
     public CardController(Context context) {
         super(context);
+    }
+
+    public ArrayList<Card> all() {
+        return getAllCards();
     }
 
     public boolean store(Card obj) {

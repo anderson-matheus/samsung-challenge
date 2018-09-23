@@ -6,6 +6,12 @@ public class CardDataModel {
     private static final String name = "name";
     private static final String content = "content";
     private static final String userId = "user_id";
+    private static final String createdAt = "created_at";
+
+    public static String getCreatedAt() {
+        return createdAt;
+    }
+
     private static String queryCreateTable = "";
 
     public static String getTable() {

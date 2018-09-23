@@ -6,6 +6,16 @@ public class Card {
     private String content;
     private int userId;
 
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    private String createdAt;
+
     public int getId() {
         return id;
     }
