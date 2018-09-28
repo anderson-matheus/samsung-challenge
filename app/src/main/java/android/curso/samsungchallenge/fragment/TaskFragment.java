@@ -25,7 +25,6 @@ public class TaskFragment extends Fragment {
     TaskController taskController;
 
     public TaskFragment() {
-
     }
 
     @Override
@@ -43,7 +42,7 @@ public class TaskFragment extends Fragment {
         TaskListAdapter adapter = new TaskListAdapter(data, getContext());
         listView.setAdapter(adapter);
 
-        btnNewTask = (FloatingActionButton) view.findViewById(R.id.buttonNewTask);
+        btnNewTask = view.findViewById(R.id.buttonNewTask);
         btnNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
