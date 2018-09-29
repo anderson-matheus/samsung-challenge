@@ -21,7 +21,7 @@ public class CreateUserActivity extends AppCompatActivity {
         btnNewUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(), "Cadastro realizado com sucesso" , Toast.LENGTH_SHORT ).show();
+                Toast.makeText(getBaseContext(), "Tudo certo no seu cadastro!" , Toast.LENGTH_SHORT ).show();
                 Intent createNewUserActivity = new Intent(CreateUserActivity.this, MainActivity.class);
                 CreateUserActivity.this.startActivity(createNewUserActivity);
             }

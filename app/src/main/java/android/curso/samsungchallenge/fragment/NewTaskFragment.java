@@ -55,10 +55,10 @@ public class NewTaskFragment extends Fragment {
                     obj.setUserId(1);
                     TaskController taskController = new TaskController(getContext());
                     if (taskController.store(obj) == true) {
-                        Toast.makeText(getContext(), "Tarefa criada com sucesso" , Toast.LENGTH_SHORT ).show();
+                        Toast.makeText(getContext(), "Sua tarefa foi cadastrada!" , Toast.LENGTH_SHORT ).show();
                         editTextNameTask.setText("");
                     } else {
-                        Toast.makeText(getContext(), "Não foi possível criar tarefa" , Toast.LENGTH_SHORT ).show();
+                        Toast.makeText(getContext(), "Algo errado não deu certo!" , Toast.LENGTH_SHORT ).show();
                     }
                 }
             }
