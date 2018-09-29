@@ -1,22 +1,18 @@
 package android.curso.samsungchallenge.fragment;
 
-import android.content.Context;
 import android.curso.samsungchallenge.R;
-import android.graphics.Typeface;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.curso.samsungchallenge.controller.TaskController;
+import android.curso.samsungchallenge.model.Task;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.ibm.watson.developer_cloud.conversation.v1.Conversation;
 import com.ibm.watson.developer_cloud.conversation.v1.model.InputData;
@@ -124,6 +120,18 @@ public class ChatFragment extends Fragment {
                                 System.out.println(responseList);
                                 outMessage.setMessage((String)responseList.get(0));
                                 outMessage.setId("2");
+                                String word = (String)responseList.get(0);
+                                String text = "Tarefa criada com o nome:";
+                                Boolean found;
+                                found = word.contains(text);
+                                if (found) {
+                                    String task = word.replace("Tarefa criada com o nome:", "");
+                                    Task obj = new Task();
+                                    obj.setName(task);
+                                    obj.setUserId(1);
+                                    TaskController taskController = new TaskController(getContext());
+                                    taskController.store(obj);
+                                }
                             }
                             messageArrayList.add(outMessage);
                         }
