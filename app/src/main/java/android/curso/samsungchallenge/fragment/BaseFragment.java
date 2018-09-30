@@ -32,12 +32,21 @@ public class BaseFragment extends Fragment {
         cardController = new CardController(getContext());
         Integer countCards = cardController.countCards();
         TextView cards = (TextView)view.findViewById(R.id.statisticCards);
-        cards.setText("Você tem " + countCards + " criados");
+        if (countCards != 0) {
+            cards.setText(" " + countCards + " Cards");
+        } else {
+            cards.setText("Nenhum card!");
+        }
+
 
         taskController = new TaskController(getContext());
         Integer countTasks = taskController.countTasks();
         TextView tasks = (TextView)view.findViewById(R.id.statisticTasks);
-        tasks.setText("Você tem " + countTasks + " criados");
+        if (countTasks != 0) {
+            tasks.setText(" " + countTasks + " Tarefas");
+        } else {
+            tasks.setText("Nenhuma tarefa!");
+        }
         return view;
     }
 }

@@ -1,9 +1,5 @@
 package android.curso.samsungchallenge.fragment;
 
-/**
- * Created by VMac on 17/11/16.
- */
-
 import android.curso.samsungchallenge.R;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
