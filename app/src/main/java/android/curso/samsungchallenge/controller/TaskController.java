@@ -28,4 +28,8 @@ public class TaskController extends DataSource {
         success = insert(TaskDataModel.getTable(), data);
         return success;
     }
+
+    public int countTasks() {
+        return getTaksCount();
+    }
 }
