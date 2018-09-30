@@ -10,4 +10,9 @@
     <color name="colorAqua">#008F95</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
+
+    //timer
+    <color name="colorProgressWork">#E24E42</color>
+    <color name="colorProgressRest">#008F95</color>
+
 </resources>
