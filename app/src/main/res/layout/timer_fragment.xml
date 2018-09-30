@@ -13,7 +13,7 @@
         android:layout_above="@id/progressBarCircle"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
-        android:fontFamily="@font/pattaya"
+        
         android:text="@string/state_stopped"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="40sp" />

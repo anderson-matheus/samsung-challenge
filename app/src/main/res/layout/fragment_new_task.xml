@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="CADASTRE SUA TAREFA"
+        android:text="NOVA TAREFA"
         android:textSize="20sp"
         android:background="@color/colorAqua"
         android:textColor="@color/colorWhite"
