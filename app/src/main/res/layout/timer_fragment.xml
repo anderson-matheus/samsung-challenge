@@ -37,7 +37,6 @@
         android:layout_marginTop="-1dp"
         android:layout_toEndOf="@+id/button_start_pause"
         android:text="Resetar"
-        android:visibility="invisible"
         android:textColor="@color/colorWhite"
         tools:visibility="visible"
         android:background="@color/colorPapaya"/>

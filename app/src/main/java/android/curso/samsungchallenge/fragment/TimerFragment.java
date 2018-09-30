@@ -78,14 +78,14 @@ public class TimerFragment extends Fragment {
             public void onFinish() {
                 mTimerRunning = false;
                 mButtonStartPause.setText("Iniciar");
-                mButtonStartPause.setVisibility(View.INVISIBLE);
+                mButtonStartPause.setVisibility(View.VISIBLE);
                 mButtonReset.setVisibility(View.VISIBLE);
             }
         }.start();
 
         mTimerRunning = true;
         mButtonStartPause.setText("Parar");
-        mButtonReset.setVisibility(View.INVISIBLE);
+        mButtonReset.setVisibility(View.VISIBLE);
     }
 
     private void pauseTimer() {
@@ -98,7 +98,7 @@ public class TimerFragment extends Fragment {
     private void resetTimer() {
         mTimeLeftInMillis = START_TIME_IN_MILLIS;
         updateCountDownText();
-        mButtonReset.setVisibility(View.INVISIBLE);
+        mButtonReset.setVisibility(View.VISIBLE);
         mButtonStartPause.setVisibility(View.VISIBLE);
     }
 
