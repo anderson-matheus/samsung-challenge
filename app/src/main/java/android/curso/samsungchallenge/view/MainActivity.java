@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(), "Bem-vindo nome do usuário" , Toast.LENGTH_SHORT ).show();
+                Toast.makeText(getBaseContext(), "Bem-vindo" , Toast.LENGTH_SHORT ).show();
                 Intent homeNavigationActivity = new Intent(MainActivity.this, HomeNavigationActivity.class);
                 MainActivity.this.startActivity(homeNavigationActivity);
             }

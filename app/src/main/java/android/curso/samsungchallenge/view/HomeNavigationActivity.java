@@ -103,7 +103,7 @@ public class HomeNavigationActivity extends AppCompatActivity
                 fragmentManager.beginTransaction().replace(R.id.content_fragment, new TaskFragment()).commit();
                 break;
             case R.id.nav_chat:
-                setTitle("Chatbot");
+                setTitle("ZomGenius");
                 fragmentManager.beginTransaction().replace(R.id.content_fragment, new ChatFragment()).commit();
                 break;
             default:

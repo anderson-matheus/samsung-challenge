@@ -64,9 +64,9 @@ public class NewCardFragment extends Fragment {
                     if (cardController.store(obj) == true) {
                         editTextCardName.setText("");
                         editTextCardContent.setText("");
-                        Toast.makeText(getContext(), "Card cadastrado com sucesso", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "Seu card foi cadastrado", Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(getContext(), "Não foi possível cadastrar seu card", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "Algo errado não deu certo", Toast.LENGTH_LONG).show();
                     }
 
                 }
