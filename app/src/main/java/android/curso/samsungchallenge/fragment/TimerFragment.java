@@ -14,7 +14,7 @@ import java.util.Locale;
 
 public class TimerFragment extends Fragment {
     View view;
-    private static final long START_TIME_IN_MILLIS = 600000;
+    private static final long START_TIME_IN_MILLIS = 10000;
 
     private TextView mTextViewCountDown;
     private Button mButtonStartPause;
