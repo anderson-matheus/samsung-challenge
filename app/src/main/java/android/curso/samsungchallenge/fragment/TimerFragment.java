@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -45,6 +47,7 @@ public class TimerFragment extends Fragment implements View.OnClickListener {
     private ImageView buttonPause;
     private ImageView buttonStop;
     private CountDownTimer countDownTimer;
+    View view;
 
     private long timeCountInMilliSeconds = 0;
     private long timeLeftInMillis = 0;
@@ -55,27 +58,30 @@ public class TimerFragment extends Fragment implements View.OnClickListener {
     public static boolean isOpen = true;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        appCompatActivity.setContentView(R.layout.activity_main);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        view = inflater.inflate(R.layout.timer_fragment, container, false);
         // method call to initialize the views
         initViews();
         // method call to initialize the listeners
         initListeners();
+
+        return view;
     }
 
     /**
      * method to initialize the views
      */
     private void initViews() {
-        progressBarCircle = appCompatActivity.findViewById(R.id.progressBarCircle);
-        editTextMinute = appCompatActivity.findViewById(R.id.editTextMinute);
-        textViewTime = appCompatActivity.findViewById(R.id.textViewTime);
-        textViewState = appCompatActivity.findViewById(R.id.textViewState);
-        imageViewReset = appCompatActivity.findViewById(R.id.imageViewReset);
-        buttonStartResume = appCompatActivity.findViewById(R.id.imageViewStart);
-        buttonPause = appCompatActivity.findViewById(R.id.imageViewPause);
-        buttonStop = appCompatActivity.findViewById(R.id.imageViewStop);
+        progressBarCircle = view.findViewById(R.id.progressBarCircle);
+        editTextMinute = view.findViewById(R.id.editTextMinute);
+        textViewTime = view.findViewById(R.id.textViewTime);
+        textViewState = view.findViewById(R.id.textViewState);
+        imageViewReset = view.findViewById(R.id.imageViewReset);
+        buttonStartResume = view.findViewById(R.id.imageViewStart);
+        buttonPause = view.findViewById(R.id.imageViewPause);
+        buttonStop = view.findViewById(R.id.imageViewStop);
     }
 
     /**
@@ -103,7 +109,7 @@ public class TimerFragment extends Fragment implements View.OnClickListener {
             case R.id.imageViewStart:
                 if (editTextMinute.getText().toString().isEmpty()
                         || Integer.parseInt(editTextMinute.getText().toString().trim()) == 0)
-                    Toast.makeText(appCompatActivity.getApplicationContext(), getString(R.string.message_minutes), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), getString(R.string.message_minutes), Toast.LENGTH_SHORT).show();
 
                 else {
                     startResumeTimer();
@@ -335,7 +341,7 @@ public class TimerFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onStop() {
         super.onStop();
-        SharedPreferences preferences = appCompatActivity.getSharedPreferences("preferences", appCompatActivity.MODE_PRIVATE);
+        SharedPreferences preferences = getActivity().getSharedPreferences("preferences", getActivity().MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
         bRestore = true;
@@ -351,13 +357,13 @@ public class TimerFragment extends Fragment implements View.OnClickListener {
         editor.commit();
 
         isOpen = false;
-        appCompatActivity.startService(new Intent(getContext(), NotificationService.class));
+        getActivity().startService(new Intent(getContext(), NotificationService.class));
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        SharedPreferences preferences = appCompatActivity.getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        SharedPreferences preferences = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
         editTextMinute.setText(preferences.getString("editText", "25"));
@@ -394,7 +400,7 @@ public class TimerFragment extends Fragment implements View.OnClickListener {
         } updateViews();
 
         isOpen = true;
-        contextWrapper.stopService(new Intent(getContext(), NotificationService.class));
+//        contextWrapper.stopService(new Intent(getContext(), NotificationService.class));
     }
 }
 
