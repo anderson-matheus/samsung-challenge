@@ -23,4 +23,8 @@ public class UserController extends DataSource {
         success = insert(UserDataModel.getTable(), data);
         return success;
     }
+
+    public int userExists(User obj) {
+        return countUserExists(obj);
+    }
 }

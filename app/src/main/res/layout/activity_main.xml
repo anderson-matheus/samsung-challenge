@@ -28,7 +28,7 @@
         android:textStyle="bold"/>
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/editTextLoginEmail"
         android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
         android:drawablePadding="10dp" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextLoginPassword"
         android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

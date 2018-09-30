@@ -7,6 +7,7 @@ import android.curso.samsungchallenge.datamodel.TaskDataModel;
 import android.curso.samsungchallenge.datamodel.UserDataModel;
 import android.curso.samsungchallenge.model.Card;
 import android.curso.samsungchallenge.model.Task;
+import android.curso.samsungchallenge.model.User;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -105,6 +106,14 @@ public class DataSource extends SQLiteOpenHelper {
 
     public int getTaksCount() {
         String countQuery = "SELECT  * FROM " + TaskDataModel.getTable();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        Integer count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public int countUserExists(User user) {
+        String countQuery = "SELECT  * FROM " + UserDataModel.getTable() + " WHERE " + UserDataModel.getEmail() + " = '" + user.getEmail() + "' AND " + UserDataModel.getPassword() + " = '" + user.getPassword() + "'";
         Cursor cursor = db.rawQuery(countQuery, null);
         Integer count = cursor.getCount();
         cursor.close();

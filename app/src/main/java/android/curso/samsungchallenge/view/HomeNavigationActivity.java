@@ -1,5 +1,6 @@
 package android.curso.samsungchallenge.view;
 
+import android.content.SharedPreferences;
 import android.curso.samsungchallenge.R;
 import android.curso.samsungchallenge.fragment.BaseFragment;
 import android.curso.samsungchallenge.fragment.CardFragment;
@@ -23,6 +24,7 @@ public class HomeNavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FragmentManager fragmentManager;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
