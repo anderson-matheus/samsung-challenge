@@ -99,7 +99,7 @@ public class HomeNavigationActivity extends AppCompatActivity
                 fragmentManager.beginTransaction().replace(R.id.content_fragment, new MonitoringFragment()).commit();
                 break;
             case R.id.nav_timer:
-                setTitle("Timer");
+                setTitle("Tarefas");
                 fragmentManager.beginTransaction().replace(R.id.content_fragment, new TaskFragment()).commit();
                 break;
             case R.id.nav_chat:
