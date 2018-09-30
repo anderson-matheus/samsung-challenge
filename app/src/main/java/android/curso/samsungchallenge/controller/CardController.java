@@ -29,4 +29,8 @@ public class CardController extends DataSource{
         success = insert(CardDataModel.getTable(), data);
         return success;
     }
+
+    public int countCards() {
+        return getCardsCount();
+    }
 }

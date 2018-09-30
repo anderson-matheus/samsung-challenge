@@ -58,22 +58,6 @@
         android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
         android:drawablePadding="10dp"/>
 
-    <EditText
-        android:id="@+id/editTextConfirmPassword"
-        android:maxLines="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center_vertical"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
-        android:inputType="textPassword"
-        android:hint="Confirmar senha"
-        android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
-        android:drawablePadding="10dp" />
-
     <Button
         android:id="@+id/buttonNewUser"
         android:layout_width="match_parent"

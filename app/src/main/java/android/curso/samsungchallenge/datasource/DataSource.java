@@ -94,4 +94,20 @@ public class DataSource extends SQLiteOpenHelper {
         cursor.close();
         return list;
     }
+
+    public int getCardsCount() {
+        String countQuery = "SELECT  * FROM " + CardDataModel.getTable();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        Integer count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public int getTaksCount() {
+        String countQuery = "SELECT  * FROM " + TaskDataModel.getTable();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        Integer count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
 }
